@@ -1,8 +1,8 @@
+#include <chrono>
 #include <iostream>
 #include <string>
 #include "dictionary.h"
 #include "tree.h"
-#include <chrono>
 
 using Clock = std::chrono::steady_clock;
 using std::chrono::time_point;

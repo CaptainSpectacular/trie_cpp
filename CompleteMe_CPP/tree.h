@@ -13,5 +13,5 @@ public:
 	void load();
 	void insert(string word);
 	Node* traverse(string substring);
-	vector<string> find(string word, vector<string> suggestions = {});
+	vector<string> find(string word, vector<string> suggestions = vector<string>());
 };
