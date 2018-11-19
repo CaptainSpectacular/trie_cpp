@@ -3,6 +3,7 @@
 #include <string>
 #include "dictionary.h"
 #include "tree.h"
+#include "console.h"
 
 using Clock = std::chrono::steady_clock;
 using std::chrono::time_point;
@@ -13,26 +14,16 @@ using namespace std::literals::chrono_literals;
 
 int main()
 {
+	std::cout << "Initializing..." << std::endl;
 	Dictionary* dic = new Dictionary("words.txt");
 	dic->populate(); //Load file words into memory
-
 	Tree* tree = new Tree(dic);
-	tree->load(); // Create nodes
 
+	tree->load(); // Create nodes
+	std::cout << "Done!" << std::endl;
+	std::cout << "Type \"help\" for list of commands." << std::endl;
 	free(dic);
 
-	time_point<Clock> start = Clock::now();
-
-	vector<string> found = tree->find("com"); // search for words that
-											  // begin with 'com'
-	int found_size = found.size();
-
-	for (int i = 0; i < found_size; i++) // display found words.
-		std::cout << found[i] << std::endl;
-
-	time_point<Clock> end = Clock::now();
-	milliseconds diff = duration_cast<milliseconds>(end - start);
-	std::cout << "Time taken: " << diff.count() << "ms" << std::endl;
-	std::cout << "Words found: " << found_size << std::endl;
-	std::cin.get();
+	Console* console = new Console(tree);
+	console->run();
 }
