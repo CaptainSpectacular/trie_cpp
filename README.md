@@ -10,7 +10,7 @@ cd trie_cpp/CompleteMe_CPP
 
 #### Compile main.cpp
 ```
-g++ *.cpp -o <someFileName>
+g++ *.cpp -c <someFileName>
 ```
 #### Run the executable
 ```./<someFileName>```
