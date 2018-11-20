@@ -23,7 +23,7 @@ void Tree::insert(string word)
 
 		else
 		{
-			if (word.length() - i == 1)
+			if (word.length() - i == 1) // if this is the last char of the word
 				ptr->insert_char(word[i], true);
 			
 			else
