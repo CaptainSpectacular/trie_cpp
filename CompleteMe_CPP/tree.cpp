@@ -61,9 +61,15 @@ Node* Tree::traverse(string substring)
 vector<string> Tree::find(string word, vector<string> suggestions)
 {
 	Node* ptr = traverse(word);
+	if (ptr == nullptr)
+	{
+		std::cout << "No words found." << std::endl;
+		return suggestions;
+	}
+
 	if (ptr->word)
 		suggestions.push_back(word);
-
+		
 	for (Node* child : ptr->children)
 		suggestions = find(word + child->data, suggestions);
 
