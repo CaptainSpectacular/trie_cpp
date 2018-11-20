@@ -1,16 +1,8 @@
-#include <chrono>
 #include <iostream>
 #include <string>
 #include "dictionary.h"
 #include "tree.h"
 #include "console.h"
-
-using Clock = std::chrono::steady_clock;
-using std::chrono::time_point;
-using std::chrono::duration_cast;
-using std::chrono::milliseconds;
-using namespace std::literals::chrono_literals;
-
 
 int main()
 {
